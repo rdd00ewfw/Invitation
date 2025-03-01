@@ -18,8 +18,9 @@
         }
 
         .square {
-            width: 600px;
-            height: 250px;
+            width: 90%; /* Adjust width for mobile view */
+            max-width: 600px; /* Limit the max width on larger screens */
+            height: auto; /* Make height auto so it scales with width */
             background-color: rgba(0, 0, 0, 0.56);
             display: flex;
             justify-content: center;
@@ -28,6 +29,7 @@
             font-size: 16px;
             color: #ffffff;
             border-radius: 10px;
+            padding: 20px; /* Add some padding inside */
         }
 
         p {
@@ -35,9 +37,24 @@
             line-height: 1.5; /* Improve readability */
         }
 
-        /* Styling for the text content */
         .square p br {
             margin-bottom: 0.5em;
+        }
+
+        /* Media query for small screens (phones) */
+        @media (max-width: 600px) {
+            .square {
+                width: 90%;
+                padding: 10px; /* Reduce padding on small screens */
+                font-size: 14px; /* Slightly smaller font for mobile devices */
+            }
+        }
+
+        /* Media query for larger screens (desktops) */
+        @media (min-width: 600px) {
+            .square {
+                width: 600px; /* Keep original size on larger screens */
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
